@@ -1,5 +1,5 @@
 """
-Locust-Compare
+locustcompare
 This script is used to compare the results of the previous Locust run with the current one.
 
 A Locust run outputs 4 CSV files:
@@ -8,21 +8,21 @@ prefix_failures.csv
 prefix_stats_history.csv
 prefix_stats.csv
 
-Locust-Compare returns 1 CSV file:
+locustcompare returns 1 CSV file:
 prefix_comparison_stats.csv
 
-With Locust-Compare you can rename these files to a baseline.
+With locustcompare you can rename these files to a baseline.
 When you have a baseline you can perform a new Locust run.
-With Locust-Compare you can compare and validate these to the baseline.
+With locustcompare you can compare and validate these to the baseline.
 
 The dependencies are python3, locustio and pandas.
 
 Sample usage: create baseline
   $ python3 locust_compare.py --prefix example --option create_baseline
 Sample usage: create merged results CSV:
-  $ sh perf-tests.sh or locust -f <scenario_file>.py
+  $ locust -f <scenario_file>.py --config=locust.conf
   $ python3 locust_compare.py --prefix example --option create_baseline
-  $ sh perf-tests.sh or locust -f <scenario_file>.py
+  $ locust -f <scenario_file>.py --config=locust.conf
   $ python3 locust_compare.py --prefix example --option create_comparison_stats
 Sample usage: render output in HTML:
   $ python3 locust_compare.py --prefix example --option compare_column --column-name "<Column Name>" --renderoutput true
