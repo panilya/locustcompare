@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comparison report</title>
+</head>
+<body>
+    <div class="container">
+        {% for table in tables %}
+            <h2>Comparison for {{ table.title }} column</h2>
+            {{ table.body }}
+        {% endfor %}
+    </div>
+</body>
+</html>
